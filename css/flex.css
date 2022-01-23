@@ -1,0 +1,17 @@
+.header-container{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(146, 61, 226);
+    padding: 10px;
+    font-weight: bold;
+
+
+}
+.main-header{
+
+
+}
+article{
+    text-align: left;
+    background: lightcyan;
+}
