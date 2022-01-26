@@ -96,6 +96,12 @@ label {
   opacity: 1;
   font-family: Roboto;
 }
+error-output{
+  padding-left: 10px;
+  font-size:12px;
+  font-style:bold;
+  color:red;
+  }
 .input {
   width: 100%;
   padding: 8px;

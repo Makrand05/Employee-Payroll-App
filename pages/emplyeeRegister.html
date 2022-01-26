@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emplyee Payroll form</title>
     <link rel="stylesheet" href="../css/register.css">
-    <!-- Latest compiled and minified CSS -->
+    <script type="text/javascript" src="../js/FormValidation.js"></script>
+    <script type="text/javascript" src="../js/EmplyeePayrollData.js"></script>
+   
 </head>
 <body>
     <header class="header-content header">
@@ -26,8 +28,9 @@
             </div>
             <div class="row-content">
                 <label class=" label text" for="name">Name</label>
-                <input class="input" type="text" id="name" name="name" placeholder="your Name..."
+                <input class="input" type="text" id="name1" name="name" placeholder="Your Name..."
                 required>
+                <error-output class="text-error" for="text"></error-output>
             </div>
             <!-- profle image -->
             <div class="row-content">
@@ -171,12 +174,6 @@
     </form>
 </div>
 <!-- UC 8 Ability to Set Event Listener on Salary Range to display appropriate value -->
-<script>
-    const salary = document.querySelector("#salary");
-        const output = document.querySelector('.salary-output');
-        salary.addEventListener('input', function () {
-            output.textContent = salary.value;
-        })
-</script>
+
 </body>
 </html>
