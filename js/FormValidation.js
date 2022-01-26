@@ -18,13 +18,7 @@ function validateName(){
 
             textError.textContent=e;
         }
-    // const nameRegex=RegExp('^[A-Z]{1}[a-z]{2,}$')
-    // if(nameRegex.test(name.value)){
-    //     textError.textContent="";
-    // }
-    // else{
-    //     textError.textContent="*Name is invalid";
-    // }
+  
      })
 }
 function salaryRange(){
