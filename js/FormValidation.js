@@ -8,14 +8,24 @@ function validateName(){
     // console.log(name);
     const textError=document.querySelector('.text-error');
     name.addEventListener('input',function(){
-    const nameRegex=RegExp('^[A-Z]{1}[a-z]{2,}$')
-    if(nameRegex.test(name.value)){
-        textError.textContent="";
-    }
-    else{
-        textError.textContent="*Name is invalid";
-    }
-    })
+        try{
+            const emp= new EmployeePayrollData();
+            emp.name=name.value;
+            console.log(name.value);
+            textError.textContent="";
+        }
+        catch(e){
+
+            textError.textContent=e;
+        }
+    // const nameRegex=RegExp('^[A-Z]{1}[a-z]{2,}$')
+    // if(nameRegex.test(name.value)){
+    //     textError.textContent="";
+    // }
+    // else{
+    //     textError.textContent="*Name is invalid";
+    // }
+     })
 }
 function salaryRange(){
     const salary = document.querySelector("#salary");

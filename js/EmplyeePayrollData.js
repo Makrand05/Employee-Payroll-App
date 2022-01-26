@@ -4,13 +4,15 @@ class EmployeePayrollData{
     }
     set name(name){
         const nameRegex=RegExp('^[A-Z]{1}[a-z]{2,}$')
-        if(nameRegex.test(name.value)){
-            this._name=name
-        }
-        else{
-           throw "Name is invalid";
-        }
+        if(nameRegex.test(name)){
+             this._name=name;
+            console.log(name);
+         }
+         else{
+            throw "Name is invalid";
+         }
     }
+    
     get profilePic() {
         return this._profilePic;
     }
