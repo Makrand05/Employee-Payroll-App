@@ -100,3 +100,26 @@ const createAndUpdateLocalStorage=(empData)=>{
     localStorage.setItem('EmployeePayrollList',JSON.stringify(dataList));
     alert("Dtaa stored with name "+empData.name)
 }
+const resetForm = () =>{
+    setValue('#name',"");
+    unsetSelectedValue('[name=profile]');
+    unsetSelectedValue('[name=gender]');
+    unsetSelectedValue('[name=department]');
+    setValue('#salary',"");
+    setValue('#notes',"");
+    setValue('#day',"Day");
+    setValue('#month',"Month");
+    setValue('#year',"Year");
+}
+
+const unsetSelectedValue = (propertyValue) =>{
+    let allItems=document.querySelectorAll(propertyValue);
+    for(let item of allItems){
+        item.checked=false;
+    }
+}
+
+const setValue = (id, value) =>{
+    const element=document.querySelector(id);
+    element.value=value;
+}
