@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    height: 100%;
+  }
+  
+  .header {
+    padding: 15px 0;
+    background-color: #ffffff;
+  }
+  
+  .header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 25px;
+    border: 0px solid green;
+  }
+  
+  .logo-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 0px solid rgb(248, 248, 248);
+    width: 80%;
+  }
+  
+  .logo-content-img {
+    border: 0px solid #42515f;
+  }
+  
+  .emp-text {
+    font: normal normal bold 20px/15px Montserrat;
+    font-family: "Montserrat" sans-serif;
+    letter-spacing: 0px;
+    color: #2c4ee4;
+    text-transform: capitalize;
+    margin-left: 10px;
+  }
+  
+  .payroll-text {
+    color: #42515f;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+  
