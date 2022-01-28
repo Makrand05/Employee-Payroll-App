@@ -1,6 +1,14 @@
 window.addEventListener('DOMContentLoaded',()=>{
+    emplyeeList=getEmplyeCountFromStorage();
+    
+    document.querySelector(".emp-count").textContent=emplyeeList.length;
     createInnerHTML();
 });
+
+const getEmplyeCountFromStorage=()=>{
+  //  console.log(localStorage.getItem('EmployeePayrollList'));
+return localStorage.getItem('EmployeePayrollList')? JSON.parse(localStorage.getItem('EmployeePayrollList')):[];
+}
 const createInnerHTML = () => {
        const headerHtml = `
     
