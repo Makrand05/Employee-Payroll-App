@@ -6,7 +6,7 @@ class EmployeePayrollData{
         const nameRegex=RegExp('^[A-Z]{1}[a-z]{2,}$')
         if(nameRegex.test(name)){
              this._name=name;
-            console.log(name);
+         //   console.log(name);
          }
          else{
             throw "Name is invalid";
@@ -62,15 +62,17 @@ class EmployeePayrollData{
     }
     set startDate(startDate) {
         let currentDate = new Date();
+        
         if (startDate > currentDate) {
             throw "Start date not a future date";
         }
-
-        var diff = Math.abs(currentDate.getTime - startDate.getTime());
-        if (diff / (1000 * 60 * 24) > 30) {
+        
+        var diff = Math.abs(currentDate.getTime() - startDate.getTime());
+        if (diff / (1000 * 60 * 60 * 24) > 30) {
             throw "start date is beyond 30 days";
         }
         this._startDate = startDate;
+    
     }
 
     toString() {
