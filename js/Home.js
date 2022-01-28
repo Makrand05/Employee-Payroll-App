@@ -1,11 +1,8 @@
 window.addEventListener('DOMContentLoaded',()=>{
     createInnerHTML();
-    console.log("hello");
 });
-
 const createInnerHTML = () => {
-
-  const innnerHTML = `
+       const headerHtml = `
     
     <tr>
     <th>Profile</th>
@@ -15,25 +12,68 @@ const createInnerHTML = () => {
     <th>Salary</th>
     <th>Start Date</th>
     <th>Actions</th>
-</tr>
+    </tr>
     
+    `;
+    let innerHtml = `${headerHtml}`;
+    let empPayrollList = createEmplyeePayrollJSON();
+    for (const empPayrollData of empPayrollList) {
+        innerHtml =`${innerHtml}
         <tr>
-            <td><img class="profile" src="../assert/profile-images/Ellipse -5.png"></td>
-            <td>Mak</td>
-            <td>Male</td>
-            <td>
-                <div class="dept-label">HR</div>
-                <div class="dept-label">Engineer</div>
+            <td><img class="profile" src="${empPayrollData._profilePic}"></td>
+            <td>${empPayrollData._name}</td>
+            <td>${empPayrollData._gender}</td>
+            <td>  ${getDeptHTML(empPayrollData._department)}
             </td>
-            <td>400000</td>
-            <td>16 Nov 2021</td>
+            <td>${empPayrollData._salary}</td>
+            <td>${empPayrollData._startDate}</td>
             <td>
-                <img id="1" onclick="remove(this)" alt="delete" src="../assert/icons/delete-black-18dp.svg">
-                <img id="1" alt="edit" onclick="update(this)" src="../assert/icons/create-black-18dp.svg">
+                <img id="${empPayrollData._id}" onclick="remove(this)" alt="delete" src="../assert/icons/delete-black-18dp.svg">
+                <img id="${empPayrollData._id}" alt="edit" onclick="update(this)" src="../assert/icons/create-black-18dp.svg">
             </td>
         </tr>
     
-    `;
+        `;
+    }
+        document.querySelector('#display').innerHTML = innerHtml;
+    }
+const createEmplyeePayrollJSON=()=>{
+    let empPayrollList=[
+        {
+            "id": 1,
+            "_name": "Mark",
+            "_gender": "male",
+            "_department": [
+              "Finance"
+            ],
+            "_salary": "500000",
+            "_startDate": 1572287400000,
+            "_note": "All In One",
+            "_profilePic": "../assert/profile-images/Ellipse -3.png"
+          },
+          {
+            "id": 2,
+            "_name": "Bill",
+            "_gender": "male",
+            "_department": [
+              "Engineering","Finance"
+            ],
+            "_salary": "500000",
+            "_startDate": "29 Oct 2019",
+            "_note": "Terrific Engineer",
+            "_profilePic": "../assert/profile-images/Ellipse -4.png"
+          }
+    ];
+    return empPayrollList;
+}
 
-    document.querySelector('#display').innerHTML=innnerHTML;
-};
+const getDeptHTML=(deptList)=>{
+    let deptHTML='';
+    for (const dept of deptList){
+
+        deptHTML=`${deptHTML}
+        <div class="dept-label">${dept}</div>
+        `;
+    }
+    return deptHTML;
+}
