@@ -48,4 +48,42 @@ body {
     box-sizing: border-box;
   }
 
+  .main-content{
+      display: flex;
+      flex-direction: column;
+      min-height: calc(100px-80px);
+      background-color: #f7f7f7;
+      padding: 10px 0px 0px;
+      box-sizing: border-box;
+  }
   
+  .emp-detail-text{
+      font: normal normal bold 20px/20px Roboto;
+      letter-spacing: 0px;
+      color: #42515f;
+      opacity: 1;        
+  }
+
+.emp-count{
+    background-color: #5255e7;
+    color: #ffffff;
+    border-radius: 10%;
+    font-size: 15px;
+    width: 30px;
+    text-align: center;
+    display: inline-block;
+}
+
+.addButton{
+    font: normal normal normal 15px/29px Roboto;
+    letter-spacing: 0px;
+    color: #ffffff;
+    opacity: 1;
+    background: #2528ec 0% 0% no-repeat ;
+    border: rgb(21, 35, 233);
+    border-radius: 5px;
+    padding: 5px 18px;
+    outline: none;
+    cursor: pointer;
+    text-decoration:none ;
+}
