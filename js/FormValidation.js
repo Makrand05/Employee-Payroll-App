@@ -33,7 +33,8 @@ const save=()=>{
     try{
     let employeePayrollData= payrollData();
     // Store in local storage data
-
+    
+    createAndUpdateLocalStorage(employeePayrollData);
     }
     catch(e){return;}
 }
@@ -88,3 +89,14 @@ const setTextValue = (id, message) => {
     return selItems;
 }
 
+const createAndUpdateLocalStorage=(empData)=>{
+    let dataList=JSON.parse(localStorage.getItem("EmployeePayrollList"));
+    if(dataList!=undefined){
+        dataList.push(empData);
+    }
+    else{
+        dataList=[empData]
+    }
+    localStorage.setItem('EmployeePayrollList',JSON.stringify(dataList));
+    alert("Dtaa stored with name "+empData.name)
+}
